@@ -10,7 +10,6 @@ class Customer
   attr_accessor :balance 
   
   def deposit(amount)
-    
     self.balance += amount
   end
 

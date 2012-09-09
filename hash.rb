@@ -12,7 +12,7 @@ def count_character(statement)
       if count_hash.assoc(alphabet) == nil 
         count_hash[alphabet] = 1
       else 
-      count_hash[alphabet] += 1
+        count_hash[alphabet] += 1
       end
     end
   end
