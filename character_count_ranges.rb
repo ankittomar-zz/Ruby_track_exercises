@@ -3,6 +3,7 @@ def character_count_range
   count_characters(text)
 end
 
+  
 def count_characters(text)
   lower_case = 0
   upper_case = 0
