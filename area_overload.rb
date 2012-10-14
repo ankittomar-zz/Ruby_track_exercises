@@ -1,5 +1,5 @@
 class AreaOverload
-	def area(figure,*args)
+  def area(figure,*args)
 		if figure == "circle"
 			radius = args[0]
 			area = 3.14*radius*radius
