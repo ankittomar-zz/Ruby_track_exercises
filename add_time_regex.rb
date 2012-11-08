@@ -6,12 +6,11 @@ def time
   time1 = gets.rstrip
   print("Enter second time value :  ")
   time2 = gets.rstrip
- if verify_time_format(time1) && verify_time_format(time2) ? time = add(time1,time2) : puts("wrong format") 
- end
+ verify_time_format(time1) && verify_time_format(time2) ? time = add(time1,time2) : puts("wrong format") 
 end
 
 def verify_time_format(time)
-  return 1 if   (/^(([0-1]{0,1}[0-9]{1})||([0-2]{1}[0-3]{1})):[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$/=~time)
+  return 1 if (/^(([0-1]{0,1}[0-9]{1})||([0-2]{1}[0-3]{1})):[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$/=~time)
 end
 
 def add(time1,time2)

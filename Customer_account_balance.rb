@@ -1,6 +1,4 @@
 class Customer
-
-   
   def initialize(name,account_no,balance)
     @name = name
     @account = account_no+1

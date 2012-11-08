@@ -9,7 +9,7 @@ def factorial
       puts ("Factorial of #{number} is = #{factorial}") 
     end
   rescue ArgumentError
-   puts "Exception occured please try again"
+   puts "Exception ofccured please try again"
   end
 end
 

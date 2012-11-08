@@ -7,8 +7,7 @@ def add_time
   while flag == 'y' || flag == 'Y' do
    print("Enter Time value  :  ")
    time1 = gets
-   if verify_time_format(time1) ? time = add(time1) : puts("wrong format") 
-   end
+   verify_time_format(time1) ? time = add(time1) : puts("wrong format") 
    puts "Press 'y' to enter more values."
    flag = gets.rstrip
   end
@@ -16,7 +15,7 @@ def add_time
 end
 
 def verify_time_format(time)
-  return 1 if   (/^(([0-1]{0,1}[0-9]{1})||([0-2]{1}[0-3]{1})):[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$/=~time)
+  return 1 if (/^(([0-1]{0,1}[0-9]{1})||([0-2]{1}[0-3]{1})):[0-5]{1}[0-9]{1}:[0-5]{1}[0-9]{1}$/=~time)
 end
 
 def add(time1)
