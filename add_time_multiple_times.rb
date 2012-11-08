@@ -1,4 +1,7 @@
+require 'date'
+require 'time'
 $second = 0
+
 def add_time
   flag = 'y'
   while flag == 'y' || flag == 'Y' do
@@ -17,11 +20,10 @@ def verify_time_format(time)
 end
 
 def add(time1)
-  require 'date'
-  require 'time'
+  
   t1 = DateTime.parse(time1)
   time = String.new
-  $second = $second+(t1.hour*60*60+t1.min*60+t1.sec) #+ (t2.hour*60*60+t2.min*60+t2.sec)
+  $second = $second+(t1.hour*60*60+t1.min*60+t1.sec) 
   puts $second
   hours = $second/(60*60)
   if hours > 23
