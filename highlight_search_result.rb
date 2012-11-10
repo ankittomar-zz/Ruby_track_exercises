@@ -4,6 +4,7 @@ def highlight_search
   str.gsub!(/can/i){|c| count+=1
   '(can)' }
   puts str  
+  puts "count"
 end
 
 highlight_search

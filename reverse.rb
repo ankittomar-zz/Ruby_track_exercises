@@ -6,7 +6,7 @@ def reverse_string
 end
 
 def revers_method(text)
-text.reverse.split.join(" ")
+text.split.reverse.join(" ")
 end
 
 reverse_string

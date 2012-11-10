@@ -5,7 +5,7 @@ class Customer
     @balance	= balance
   end
 
-  attr_accessor :balance 
+  attr_accessor :balance, :account 
   
   def deposit(amount)
     self.balance += amount
@@ -23,10 +23,11 @@ def entry()
     account_number += 1
     print("enter name: ")
     name = gets()
-    puts("Account number: #{account_number}")
+  
     print("Enter Balance: ")
     balance = gets().to_f
     object1 = Customer.new(name,account_number,balance)
+    puts("Account number: #{object1.account}")
     print("Enter the amount to be credited : ")
     amount_add = gets().to_f
     puts(amount_add.inspect)

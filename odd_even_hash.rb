@@ -10,14 +10,10 @@ end
 
 def arr_to_hash(items)
   len=items.length-1
-  arr_hash = Hash.new{[]}
+  arr_hash = Hash.new
   for i in 0..len
     elem_len = items[i].to_s.length
-    if arr_hash.assoc(elem_len) == nil
-      arr_hash[elem_len] = arr_hash[elem_len].push(items[i])
-    else
-      arr_hash[elem_len].push(items[i])
-    end      
+    (arr_hash[elem_len] ||= []) << (items[i])
   end
   arr_hash
 end

@@ -1,10 +1,13 @@
 class InterestDifference
   attr_accessor :rate, :time, :principal
   def simple_intrest
-    amount_si = @principal+(@principal*@rate*@time)/100
+     @principal+(@principal*@rate*@time)/100
   end
   def compound_interest
-    amount_ci = @principal * ((1+ (@rate/100.0))** @time)
+     @principal * ((1+ (@rate/100.0))** @time)
+  end
+  def difference
+    puts ("Difference = #{compound_interest - simple_intrest}")
   end
 end
 
@@ -19,4 +22,4 @@ obj = InterestDifference.new.tap do |item|
 end
 puts ("Amount with Compound Intrest = #{obj.compound_interest} \n")
 puts ("Amount with Simple Intrest = #{obj.simple_intrest} \n")
-puts ("Difference = #{obj.compound_interest - obj.simple_intrest}")
+puts obj.difference

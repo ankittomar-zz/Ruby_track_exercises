@@ -1,7 +1,7 @@
 def find_prime
   print ("Enter the End Limit: ")
   end_limit = gets.to_i
-  1.step(end_limit,1) do |h|
+  1.step(end_limit) do |h|
     prime = gen_prime(h)
     if prime == 0
       puts(h)
@@ -11,7 +11,7 @@ def find_prime
 end
 
 def gen_prime(num)
-  2.step(num-1,1) do |h|
+  2.step(num-1) do |h|
     if num.remainder(h)==0
       return 1
     end

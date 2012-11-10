@@ -1,5 +1,5 @@
-class Vehicle
-  def initialize(name,price)
+  class Vehicle
+  def initialize(name, price)
     @name = name
     @price = price
   end

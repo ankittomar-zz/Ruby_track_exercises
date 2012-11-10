@@ -4,12 +4,10 @@ def power_arr
   print("Enter exponent value: ")
   x = gets().to_i
   puts("====== Array Before Modification ======")
-  print(power_array.collect{|a| a})
-  puts
+  p power_array
   power_array = expo_fun(power_array,x)
   puts("========= Array After Modification ========")
-  print(power_array.collect{|a| a})
-  puts
+  p power_array
 end
 
 def expo_fun(power_array,x)

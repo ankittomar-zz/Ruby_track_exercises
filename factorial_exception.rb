@@ -9,15 +9,13 @@ def factorial
       puts ("Factorial of #{number} is = #{factorial}") 
     end
   rescue ArgumentError
-   puts "Exception ofccured please try again"
+   puts "Exception occured please try again"
   end
 end
 
 def generate_factorial(number)
-  return 1 if number < 2  
-  rang = 2..number
-  facto = 1 
-  rang.each {|digit| facto = facto*digit}
+  facto = 1
+  1.step(number) {|i| facto = facto*i} 
   facto  
 end
 

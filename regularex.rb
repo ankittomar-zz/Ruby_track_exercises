@@ -7,7 +7,7 @@ def get_text()
 end
 
 def replace_vowel(sen)
-  sen.gsub!(/[aeiouAEIOU]/, '*')
+  sen.gsub!(/[aeiou]/i, '*')
 end
 get_text
 
