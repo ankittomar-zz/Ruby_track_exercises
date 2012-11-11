@@ -1,12 +1,12 @@
 def reverse_string
   print("Enter the string to be reversed =   ")
-  text = gets
+  statement = gets
   puts("===================string after reversing===============")
-  puts revers_method(text)
+  puts revers_method(statement)
 end
 
-def revers_method(text)
-text.split.reverse.join(" ")
+def revers_method(statement)
+  statement.split.reverse.join(" ")
 end
 
 reverse_string
