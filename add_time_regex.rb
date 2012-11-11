@@ -14,9 +14,9 @@ def verify_time_format(time)
 end
 
 def add(time1,time2)
-  t1 = DateTime.parse(time1)
-  t2 = DateTime.parse(time2)
-  second = convert_to_sec(t1)+convert_to_sec(t2)
+  parsed_time1 = DateTime.parse(time1)
+  parsed_time2 = DateTime.parse(time2)
+  second = convert_to_sec(parsed_time1)+convert_to_sec(parsed_time2)
   convert_time(second)
 end
 
@@ -34,10 +34,10 @@ def convert_time(second)
   else
     time << hours.to_s << ':'
   end
-  min = (second-hours*(60*60))/60
-  time << min.to_s << ':'
-  sec = (second-(hours*60*60)-(min*60))
-  time << sec.to_s
+  minutes = (second-hours*(60*60))/60
+  time << minutes.to_s << ':'
+  seconds = (second-(hours*60*60)-(minutes*60))
+  time << seconds.to_s
   puts ("After Adding both times ======  #{time}")
 end
 
