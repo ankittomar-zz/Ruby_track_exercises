@@ -13,9 +13,9 @@ end
 def generate_factorial(number)
   return 1 if number < 2  
   rang = 2..number
-  facto = 1 
-  rang.each {|digit| facto = facto*digit}
-  facto  
+  factorial = 1 
+  rang.each {|digit| factorial = factorial*digit}
+  factorial  
 end
 
 factorial
