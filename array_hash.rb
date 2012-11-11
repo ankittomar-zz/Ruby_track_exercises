@@ -1,17 +1,17 @@
 def array_hash
-items = Array.new
-items = ['array','qwerty','qwer',123456,12345,'qwert',1234,123,'qwe',12,'qw',1234567,'qwertyu']
-arr_to_hash(items)
+items_array = Array.new
+items_array = ['array','qwerty','qwer',123456,12345,'qwert',1234,123,'qwe',12,'qw',1234567,'qwertyu']
+array_to_hash(items_array)
 end
 
-def arr_to_hash(items)
-  len=items.length-1
-  arr_hash = Hash.new
-  for i in 0..len
-    elem_len = items[i].to_s.length
-    (arr_hash[elem_len] ||= []) << items[i]      
+def array_to_hash(items)
+  length=items.length-1
+  generated_hash = Hash.new
+  for i in 0..length
+    element_length = items[i].to_s.length
+    (generated_hash[element_length] ||= []) << items[i]      
   end
-  puts arr_hash
+  puts generated_hash
 end
 
 array_hash
