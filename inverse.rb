@@ -3,11 +3,11 @@ class Inverse
   def initialize(statement)
     @statement = statement
   end
-  attr_accessor :statement
+  
   def to_s()
     puts("=============Statement before Swaping===============")
     puts(@statement)
-    statement.swapcase!
+    @statement.swapcase!
     puts("=============Statement after Swaping===============")
     puts(@statement)
   end
