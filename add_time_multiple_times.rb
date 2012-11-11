@@ -20,9 +20,9 @@ end
 
 def add(time1)
   
-  t1 = DateTime.parse(time1)
+  parsed_time1 = DateTime.parse(time1)
   time = String.new
-  $second = $second+(t1.hour*60*60+t1.min*60+t1.sec) 
+  $second = $second+(parsed_time1.hour*60*60+parsed_time1.min*60+parsed_time1.sec) 
   puts $second
   hours = $second/(60*60)
   if hours > 23
@@ -32,10 +32,10 @@ def add(time1)
   else
     time << hours.to_s << ':'
   end
-  min = ($second-hours*(60*60))/60
-  time << min.to_s << ':'
-  sec = ($second-(hours*60*60)-(min*60))
-  time << sec.to_s
+  minutes = ($second-hours*(60*60))/60
+  time << minutes.to_s << ':'
+  seconds = ($second-(hours*60*60)-(minutes*60))
+  time << seconds.to_s
 end
 
 add_time
