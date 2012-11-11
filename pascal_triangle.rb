@@ -1,8 +1,8 @@
 def pascal_triangle
   print("Enter number of rows:")
-  num_rows = gets().to_i
+  number_of_rows = gets().to_i
   current_row =[1]
-  while current_row.length < num_rows+1
+  while current_row.length < number_of_rows+1
     print "#{current_row} \n"
     current_row = yield current_row
   end
