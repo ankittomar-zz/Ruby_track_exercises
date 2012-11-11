@@ -14,9 +14,9 @@ def factorial
 end
 
 def generate_factorial(number)
-  facto = 1
-  1.step(number) {|i| facto = facto*i} 
-  facto  
+  factorial = 1
+  1.step(number) {|i| factorial = factorial*i} 
+  factorial  
 end
 
 factorial
