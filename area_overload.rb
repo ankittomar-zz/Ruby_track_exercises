@@ -13,7 +13,6 @@ class AreaOverload
     elsif number_of_argumnets == 3
       side1,side2,side3 = args
       semiperimeter = (side1 + side2 + side3)/2
-      p semiperimeter
       area = sqrt(semiperimeter*(semiperimeter-side1)*(semiperimeter-side2)*(semiperimeter-side3))
       area<=0 ? puts("not a triangle check the values") : puts("Area of Triangle with sides #{side1}, #{side2}, #{side3} =  #{area}")
     end
