@@ -1,12 +1,12 @@
 class Customer
-  @@account_no = 0
+  @@base_account_number = 0
   def initialize(name)
     @name = name
-    @account = @@account_no += 1
+    @account_number = @@base_account_number += 1
     @balance	= 1000
   end
 
-  attr_accessor :balance, :account, :name 
+  attr_accessor :balance, :account_number, :name 
   
   def deposit(amount)
     self.balance += amount
@@ -25,7 +25,7 @@ def entry()
     puts ("====================================================")
     object1 = Customer.new(name)
     puts ("Name of Account Holder : #{object1.name}")
-    puts("Account number: #{object1.account}")
+    puts("Account number: #{object1.account_number}")
     print("Enter the amount to be credited : ")
     amount_add = gets().to_f
     puts(amount_add.inspect)
