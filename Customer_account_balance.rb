@@ -1,11 +1,12 @@
 class Customer
-  def initialize(name,account_no,balance)
+  @@account_no = 0
+  def initialize(name)
     @name = name
-    @account = account_no+1
-    @balance	= balance
+    @account = @@account_no += 1
+    @balance	= 1000
   end
 
-  attr_accessor :balance, :account 
+  attr_accessor :balance, :account, :name 
   
   def deposit(amount)
     self.balance += amount
@@ -18,15 +19,12 @@ end
 
 def entry()
   status = 'y'
-  account_number = rand(645533243)
   until status == 'q' || status =='Q' do
-    account_number += 1
     print("enter name: ")
     name = gets()
-  
-    print("Enter Balance: ")
-    balance = gets().to_f
-    object1 = Customer.new(name,account_number,balance)
+    puts ("====================================================")
+    object1 = Customer.new(name)
+    puts ("Name of Account Holder : #{object1.name}")
     puts("Account number: #{object1.account}")
     print("Enter the amount to be credited : ")
     amount_add = gets().to_f
