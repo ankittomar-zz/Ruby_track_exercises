@@ -7,9 +7,9 @@ class AreaOverload
       area = 3.14*radius*radius
       puts ("Area of Cicle with Radius #{radius}=  #{area}")
     elsif number_of_argumnets == 2
-      len,bred = args
-      area = len*bred
-      puts ("Area of Rectangle with length #{len} and breadth #{bred} =  #{area}")
+      length,breadth = args
+      area = length*breadth
+      puts ("Area of Rectangle with length #{length} and breadth #{breadth} =  #{area}")
     elsif number_of_argumnets == 3
       side1,side2,side3 = args
       semiperimeter = (side1 + side2 + side3)/2
