@@ -15,7 +15,8 @@ def add_time
 end
 
 def verify_time_format(time)
-  return 1 if (/^(([0-1]{0,1}[0-9])||(2[0-3])):[0-5][0-9]:[0-5][0-9]$/=~time)
+  regexp = /^(([0-1]{0,1}[0-9])||(2[0-3])):[0-5][0-9]:[0-5][0-9]$/
+  return 1 if (regexp=~time)
 end
 
 def add(time1)
@@ -23,7 +24,6 @@ def add(time1)
   parsed_time1 = DateTime.parse(time1)
   time = String.new
   $second = $second+(parsed_time1.hour*60*60+parsed_time1.min*60+parsed_time1.sec) 
-  puts $second
   hours = $second/(60*60)
   if hours > 23
     day = hours/24

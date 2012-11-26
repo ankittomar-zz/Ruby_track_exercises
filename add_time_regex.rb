@@ -1,5 +1,6 @@
 require 'date'
 require 'time'
+
   
 def time
   print("Enter first Time value  :  ")
@@ -10,7 +11,8 @@ def time
 end
 
 def verify_time_format(time)
-  (/^(([0-1]{0,1}[0-9])||(2[0-3])):[0-5][0-9]:[0-5][0-9]$/=~time)
+  regexp = /^(([0-1]{0,1}[0-9])||(2[0-3])):[0-5][0-9]:[0-5][0-9]$/
+  (regexp=~time)
 end
 
 def add(time1,time2)
