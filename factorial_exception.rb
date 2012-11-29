@@ -1,6 +1,4 @@
-def factorial
-  puts("enter the number whose factorial is to be calculated: ")
-  number = gets.chomp.to_i
+def factorial(number)
   begin
     if number<0
       raise ArgumentError
@@ -19,6 +17,9 @@ def generate_factorial(number)
   factorial  
 end
 
-factorial
+puts("enter the number whose factorial is to be calculated: ")
+number = gets.chomp.to_i
+factorial(number)
+
 
 

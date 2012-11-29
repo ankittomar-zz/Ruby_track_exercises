@@ -1,15 +1,6 @@
 require 'date'
 require 'time'
 
-  
-def time
-  print("Enter first Time value  :  ")
-  time1 = gets.rstrip
-  print("Enter second time value :  ")
-  time2 = gets.rstrip
- verify_time_format(time1) && verify_time_format(time2) ? time = add(time1,time2) : puts("wrong format") 
-end
-
 def verify_time_format(time)
   regexp = /^(([0-1]{0,1}[0-9])||(2[0-3])):[0-5][0-9]:[0-5][0-9]$/
   (regexp=~time)
@@ -43,4 +34,10 @@ def convert_time(second)
   puts ("After Adding both times ======  #{time}")
 end
 
-time
+
+print("Enter first Time value  :  ")
+time1 = gets.rstrip
+print("Enter second time value :  ")
+time2 = gets.rstrip
+verify_time_format(time1) && verify_time_format(time2) ? time = add(time1,time2) : puts("wrong format") 
+
