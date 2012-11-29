@@ -8,9 +8,6 @@ def count_character(statement)
   count_hash
 end
 
-print ("Enter the string to be tested :  ")
+print ("Enter the string whose characters are to be counted:  ")
 statement = gets.chomp
 p(count_character(statement))
-
-
-
