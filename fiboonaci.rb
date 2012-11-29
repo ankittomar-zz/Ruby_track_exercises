@@ -7,11 +7,11 @@ def gen_fibonnaci(limit)
   end
 end
 
-def fibonacci
-  print("Enter the Limit: ")
-  limit = gets.chomp.to_i
+def fibonacci(limit)
   gen_fibonnaci(limit) {|b| print(" #{b}")}
 end
 
-fibonacci
+print("Enter the Limit: ")
+limit = gets.chomp.to_i
+fibonacci(limit)
 
