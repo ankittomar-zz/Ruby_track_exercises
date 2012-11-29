@@ -1,11 +1,11 @@
 class InterestDifference
   attr_accessor :rate, :time, :principal
   def simple_intrest
-     @principal+(@principal*@rate*@time)/100
+    @principal+(@principal*@rate*@time)/100
   end
   
   def compound_interest
-     @principal * ((1+ (@rate/100.0))** @time)
+    @principal * ((1+ (@rate/100.0))** @time)
   end
   
   def difference
