@@ -1,6 +1,4 @@
-def pascal_triangle
-  print("Enter number of rows:")
-  number_of_rows = gets.chomp.to_i
+def pascal_triangle(number_of_rows)
   current_row =[1]
   while current_row.length < number_of_rows+1
     print "#{current_row} \n"
@@ -8,7 +6,10 @@ def pascal_triangle
   end
 end
 
-pascal_triangle do |currt_row| 
+print("Enter number of rows:")
+number_of_rows = gets.chomp.to_i
+
+pascal_triangle(number_of_rows) do |currt_row| 
   current_row = [1]
   pos = 0
   (currt_row.size-1).times do
