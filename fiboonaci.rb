@@ -9,7 +9,7 @@ end
 
 def fibonacci
   print("Enter the Limit: ")
-  limit = gets().to_i
+  limit = gets.chomp.to_i
   gen_fibonnaci(limit) {|b| print(" #{b}")}
 end
 

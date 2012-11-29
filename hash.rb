@@ -1,7 +1,7 @@
 
 def get_string
   print ("Enter the string to be tested :  ")
-  statement = gets()
+  statement = gets.chomp
   p(count_character(statement))
 end  	
 

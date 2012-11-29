@@ -14,6 +14,6 @@ class Inverse
 end
 
 print("Enter the statement: ")
-statement = gets()
+statement = gets.chomp
 inverse_object = Inverse.new(statement)
 inverse_object.to_s

@@ -1,6 +1,6 @@
 def factorial
   puts("enter the number whose factorial is to be calculated: ")
-  number = gets().to_i
+  number = gets.chomp.to_i
   begin
     if number<0
       raise ArgumentError
