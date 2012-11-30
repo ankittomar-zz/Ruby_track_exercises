@@ -1,9 +1,9 @@
 class Customer
   @@base_account_number = 0
-  def initialize(name)
+  def initialize(name, balance = 1000)
     @name = name
     @account_number = @@base_account_number += 1
-    @balance	= 1000
+    @balance	= balance
   end
 
   attr_accessor :balance, :account_number, :name 
@@ -14,7 +14,7 @@ class Customer
   end
 
   def withdrawl(amount)
-     (amount > self.balance) ? (return 1) : self.balance -= amount	
+     (amount > self.balance) ? 1 : self.balance -= amount	
   end
 end
 
@@ -35,10 +35,8 @@ def handle_account()
     
     puts ("Enter the balance")
     initial_amount = gets.chomp
-    if initial_amount != ""
-      object1.balance = initial_amount.to_f
-    end
-    
+    object1.balance ||= initial_amount.to_f
+        
     print("Enter the amount to be credited : ")
     amount_add = gets.to_f
     puts(amount_add.inspect)
