@@ -8,16 +8,13 @@ class Customer
 
   attr_accessor :balance, :account_number, :name 
   
-  def withdrawl_validation(amount)
-      return 1 if amount > self.balance 
-  end
-
+  
   def deposit(amount)
     self.balance += amount
   end
 
   def withdrawl(amount)
-    self.balance -= amount	
+     (amount > self.balance) ? (return 1) : self.balance -= amount	
   end
 end
 
@@ -52,7 +49,7 @@ def handle_account()
     print("Enter the amount to be debited : ")
     amount_ded = gets.to_f
     flag = 'y'
-    while object1.withdrawl_validation(amount_ded) == 1 && flag == 'y' do
+    while object1.withdrawl(amount_ded) == 1 && flag == 'y' do
       puts ("not enough balance please try again. Remaining balance is #{object1.balance}")
       puts ("press 'y' to enter withdrawl amount and 'Q to proceed to next account")
       flag = gets.chomp.downcase
@@ -61,9 +58,7 @@ def handle_account()
         amount_ded = gets.to_f
       end
 
-      if object1.withdrawl_validation(amount_ded) != 1
-        puts("Amount before Debiting: Rs#{object1.balance} ")
-        object1.withdrawl(amount_ded) 
+      if object1.withdrawl(amount_ded) != 1
         puts("Amount after Debiting RS#{amount_ded} : Rs#{object1.balance}")
         flag = 'q'
       end
@@ -76,4 +71,3 @@ end
 
 
 handle_account
-
