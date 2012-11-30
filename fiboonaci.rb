@@ -1,17 +1,19 @@
-def gen_fibonnaci(limit)
+def fibonacci
+  print("Enter the Limit: ")
+  limit = gets.to_i
   a,b=0,1
-  print ("#{a} #{b}")
-  while (a+b<limit) do
-    a,b=b,a+b
-    yield(b)	
+  yield(a,b,limit)
+end
+
+def gen_fibonacci
+  fibonacci() do |a,b,limit|
+    print ("#{a} #{b}") 
+    while (a+b<limit) do
+      a,b=b,a+b
+      print(" #{b}")
+    end
   end
 end
 
-def fibonacci(limit)
-  gen_fibonnaci(limit) {|b| print(" #{b}")}
-end
-
-print("Enter the Limit: ")
-limit = gets.to_i
-fibonacci(limit)
+gen_fibonacci
 
