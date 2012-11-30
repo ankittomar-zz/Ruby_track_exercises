@@ -1,16 +1,24 @@
-def gen_fibonnaci(limit)
-  a,b=0,1
-  print ("#{a} #{b}")
-  while (a+b<limit) do
-    a,b=b,a+b
-    yield(b)  
+class Fib
+  def initialize
+    @a=0
+    @b=1
+  end
+  attr_accessor :a, :b
+
+  def gen_fibonnaci
+    print ("#{a} #{b}")
+    while (a+b<1000) do
+      yield(self)  
+    end
+  end
+
+  def fibonacci
+    gen_fibonnaci do |obj|
+      obj.a,obj.b= obj.b,obj.a+obj.b
+      print(" #{obj.b}")
+    end
   end
 end
-
-def fibonacci
-  print("Enter the Limit: ")
-  limit = gets.chomp.to_i
-  gen_fibonnaci(limit) {|b| print(" #{b}")}
-end
-
-fibonacci
+ 
+object = Fib.new
+object.fibonacci
