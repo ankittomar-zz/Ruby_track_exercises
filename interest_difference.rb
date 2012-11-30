@@ -14,9 +14,9 @@ class InterestDifference
 end
 
 print("Enter principal :  ")
-principal = gets.chomp.to_i
+principal = gets.to_i
 print("\nenter time : ")
-time = gets.chomp.to_i
+time = gets.to_i
 InterestDifference.new.tap do |item|
   item.rate,item.time,item.principal = 10,time,principal
   puts ("Amount with compound_interestpound Intrest = #{item.compound_interest} \n")

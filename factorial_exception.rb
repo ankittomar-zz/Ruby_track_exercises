@@ -18,7 +18,7 @@ def generate_factorial(number)
 end
 
 puts("enter the number whose factorial is to be calculated: ")
-number = gets.chomp.to_i
+number = gets.to_i
 factorial(number)
 
 

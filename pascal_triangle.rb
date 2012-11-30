@@ -7,7 +7,7 @@ def pascal_triangle(number_of_rows)
 end
 
 print("Enter number of rows:")
-number_of_rows = gets.chomp.to_i
+number_of_rows = gets.to_i
 
 pascal_triangle(number_of_rows) do |currt_row| 
   current_row = [1]

@@ -1,6 +1,6 @@
 def factorial
   puts("enter the number whose factorial is to be calculated: ")
-  number = gets.chomp.to_i
+  number = gets.to_i
   if number<0
     puts("Factorial of negative number cant be calculated please try again")
     factorial

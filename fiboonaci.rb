@@ -12,6 +12,6 @@ def fibonacci(limit)
 end
 
 print("Enter the Limit: ")
-limit = gets.chomp.to_i
+limit = gets.to_i
 fibonacci(limit)
 
