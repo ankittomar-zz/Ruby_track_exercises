@@ -1,11 +1,11 @@
 def check_palindrome(sentence)
-  sentence.reverse.eql? sentence
+  sentence.downcase.reverse.eql? sentence.downcase
 end
 
 continue = 'y'
 until continue == 'q' || continue == 'Q' do
   print ("enter the string to be checked : ")
-  statement = gets.rstrip.downcase
+  statement = gets.rstrip
   if statement==""
     puts "Invalid Entry. Please Enter Again"
   else
