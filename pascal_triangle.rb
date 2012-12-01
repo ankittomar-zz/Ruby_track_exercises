@@ -1,7 +1,7 @@
 def pascal_triangle(number_of_rows)
   current_row =[1]
   while current_row.length < number_of_rows+1
-    print "#{current_row} \n"
+    print "#{current_row * ' '} \n"
     current_row = yield current_row
   end
 end
