@@ -14,7 +14,7 @@ class Customer
   end
 
   def withdrawl(amount)
-     (amount > self.balance) ?  1 : self.balance -= amount	
+     (amount > self.balance) ?  false : self.balance -= amount	
   end
 end
 
@@ -27,6 +27,7 @@ end
 def handle_account()
   status = 'y'
   until status == 'q' || status =='Q' do
+    status = 'y'
     name = get_name
     object1 = Customer.new(name)
 
@@ -49,23 +50,25 @@ def handle_account()
     print("Enter the amount to be debited : ")
     amount_ded = gets.to_f
     flag = 'y'
-    while object1.withdrawl(amount_ded) == 1 && flag == 'y' do
+    while object1.withdrawl(amount_ded) == false && flag == 'y' do
       puts ("not enough balance please try again. Remaining balance is #{object1.balance}")
-      puts ("press 'y' to enter withdrawl amount and 'Q to proceed to next account")
+      puts ("press 'y' to enter withdrawl amount and 'N' to proceed to next account")
       flag = gets.chomp.downcase
       if flag == 'y'
         puts "enter new withdrawl amount"
         amount_ded = gets.to_f
       end
 
-      if object1.withdrawl(amount_ded) != 1
+      if object1.withdrawl(amount_ded) != false
         puts("Amount after Debiting RS#{amount_ded} : Rs#{object1.balance}")
         flag = 'q'
       end
     end
-    
-    puts ("enter Q to quit. Press Enter to continue")
-    status = gets.rstrip	
+    if flag != 'n'
+      puts ("enter Q to quit. Press Enter to continue")
+      status = gets.rstrip
+    end	
+
   end
 end	
 
