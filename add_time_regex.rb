@@ -2,42 +2,34 @@ require 'date'
 require 'time'
 
 def verify_time_format(time)
-  regexp = /^(([0-1]{0,1}[0-9])||(2[0-3])):[0-5][0-9]:[0-5][0-9]$/
-  (regexp=~time)
-end
-
-def add(time1,time2)
-  parsed_time1 = DateTime.parse(time1)
-  parsed_time2 = DateTime.parse(time2)
-  second = convert_to_sec(parsed_time1)+convert_to_sec(parsed_time2)
-  convert_time(second)
-end
-
-def convert_to_sec(time)
-  time.hour*60*60+time.min*60+time.sec
-end
-
-def convert_time(second)
-  time = String.new
-  hours = second/(60*60)
-  if hours > 23
-    day = hours/24
-    hour = hours % 24
-    time << day.to_s << ' day &  ' << hour.to_s << ':'  
-  else
-    time << hours.to_s << ':'
+  regexp = /^([0-1]{0,1}[0-9]||2[0-3]):([0-5][0-9]):([0-5][0-9])$/
+  if(regexp=~time)
+    p $1,$2,$3
+    return $1,$2,$3 
+  else 
+    abort "Invalid format"
   end
-  minutes = (second-hours*(60*60))/60
-  time << minutes.to_s << ':'
-  seconds = (second-(hours*60*60)-(minutes*60))
-  time << seconds.to_s
-  puts ("After Adding both times ======  #{time}")
+  
 end
+
+def add(h1,m1,s1,h2,m2,s2)
+  day = 0
+  hour,minute,second =h1+h2,m1+m2,s1+s2
+  minute,second = minute+1,(second)-60 if (second)>59
+  hour,minute = hour+1,(minute)-60 if (minute)>59
+  day,hour = day+1,(hour)-24 if (hour)>23
+  return day,hour,minute,second
+end
+
 
 
 print("Enter first Time value  :  ")
 time1 = gets.rstrip
 print("Enter second time value :  ")
 time2 = gets.rstrip
-verify_time_format(time1) && verify_time_format(time2) ? time = add(time1,time2) : puts("wrong format") 
+h1,m1,s1 = verify_time_format(time1)
+h2,m2,s2 = verify_time_format(time2)
+day,hour,minute,second = 0
+day,hour,minute,second = add(h1.to_i,m1.to_i,s1.to_i,h2.to_i,m2.to_i,s2.to_i) 
+puts("#{day} days #{hour}:#{minute}:#{second}")
 
