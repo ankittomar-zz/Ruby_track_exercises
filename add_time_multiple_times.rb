@@ -1,36 +1,36 @@
 require 'date'
 require 'time'
-$second = 0
 
 def verify_time_format(time)
-  regexp = /^(([0-1]{0,1}[0-9])||(2[0-3])):[0-5][0-9]:[0-5][0-9]$/
-  return 1 if (regexp=~time)
-end
-
-def add(time1)
-  parsed_time1 = DateTime.parse(time1)
-  time = String.new
-  $second = $second+(parsed_time1.hour*60*60+parsed_time1.min*60+parsed_time1.sec) 
-  hours = $second/(60*60)
-  if hours > 23
-    day = hours/24
-    hour = hours % 24
-    time << day.to_s << ' day &  ' << hour.to_s << ':'  
-  else
-    time << hours.to_s << ':'
+  regexp = /^([0-1]{0,1}[0-9]||2[0-3]):([0-5][0-9]):([0-5][0-9])$/
+  if(regexp=~time)
+    return $1,$2,$3 
+  else 
+    abort "Invalid format"
   end
-  minutes = ($second-hours*(60*60))/60
-  time << minutes.to_s << ':'
-  seconds = ($second-(hours*60*60)-(minutes*60))
-  time << seconds.to_s
+  
 end
 
-flag = 'y'
-while flag == 'y' || flag == 'Y' do
- print("Enter Time value  :  ")
- time1 = gets
- verify_time_format(time1) ? time = add(time1) : puts("wrong format") 
- puts "Press 'y' to enter more values."
- flag = gets.rstrip
+def add(day,h1,m1,s1,h2,m2,s2)
+  hour,minute,second =h1+h2,m1+m2,s1+s2
+  minute,second = minute+1,(second)-60 if (second)>59
+  hour,minute = hour+1,(minute)-60 if (minute)>59
+  day,hour = day+1,(hour)-24 if (hour)>23
+  return day,hour,minute,second
 end
-puts ("After Adding all time value  ======  #{time}")    
+
+def time_additon
+  day,hour,minute,second = 0,0,0,0
+  continue = 'y'
+  while (continue.downcase != 'q') do
+    print("Enter first Time value  :  ")
+    time = gets.rstrip
+    h,m,s = verify_time_format(time)
+    day,hour,minute,second = add(day,hour,minute,second,h.to_i,m.to_i,s.to_i)
+    puts "enter y to quit"
+    continue = gets.chomp 
+  end
+  puts("#{day} days #{hour}:#{minute}:#{second}")
+end
+
+time_additon
