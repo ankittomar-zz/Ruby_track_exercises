@@ -1,7 +1,7 @@
 class InterestDifference
 
-  def initialize(rate)
-    @rate = rate
+  def initialize(&block)
+    instance_eval(&block)
   end
 
   attr_accessor :rate, :time, :principal
@@ -19,13 +19,13 @@ class InterestDifference
 end
 
 print("Enter principal :  ")
-principal = gets.to_i
+prin = gets.to_i
 print("enter time : ")
-time = gets.to_i
+t = gets.to_i
  
-InterestDifference.new(10).tap do |item|
-  item.time,item.principal = time,principal
-  puts ("Amount with Compound Interest = #{item.compound_interest} \n")
-  puts ("Amount with Simple Intrest = #{item.simple_intrest} \n")
-  puts item.difference
+object1 = InterestDifference.new do 
+  @rate, @time, @principal = 10, t, prin
 end
+puts ("Amount with Compound Interest = #{object1.compound_interest} \n")
+puts ("Amount with Simple Intrest = #{object1.simple_intrest} \n")
+puts object1.difference
