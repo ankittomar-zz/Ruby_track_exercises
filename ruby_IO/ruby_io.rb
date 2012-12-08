@@ -1,21 +1,32 @@
 def read_file
   filename = 'read.csv'
+  File.open(filename).read
+end  
+
+def generate_element_hash(file_data)
   develope_hash = Hash.new
-  File.open(filename).read.split("\n").each do |line|
+  file_data.split("\n").each do |line|
     name,emp_id,designation = line.split(',')
     element = (name << " " << "(" << "EmpId: #{emp_id}" << ")")
     (develope_hash[designation] ||= []) << element
   end
+  develope_hash
 end
-  
-File.open('new.txt','w') { |f|
-    develope_hash.each {|key , value|
+
+def write_to_new_file(element_hash)
+  File.open('new.txt','w') { |f|
+    element_hash.each {|key , value|
       f << "#{key}" << "\n " 
       value.each{|item|
       f << "\t"<< "#{item}"  << "\t" << "\n" }
       f << "\n"
     }
    puts "File Formated successfully"
-}
 
-read_file
+  }
+end
+  
+
+file_data = read_file
+element_hash = generate_element_hash(file_data)
+write_to_new_file(element_hash)

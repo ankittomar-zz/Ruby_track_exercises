@@ -1,6 +1,3 @@
-Designation
- 	Name (EmpId: Emp_id)	
-
  Developer
  	John (EmpId:  12)	
 	Jack (EmpId:  15)	
