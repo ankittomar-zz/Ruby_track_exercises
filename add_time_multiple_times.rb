@@ -22,7 +22,7 @@ end
 def time_additon
   day, hour, minute, second = 0, 0, 0, 0
   continue = 'y'
-  while (continue.downcase != 'q') do
+  while (continue.downcase =='y') do
     print("Enter first Time value  :  ")
     time = gets.rstrip
     h, m, s = verify_time_format(time)
