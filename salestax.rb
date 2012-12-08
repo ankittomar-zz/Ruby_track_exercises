@@ -16,11 +16,24 @@ class Salestax
 
 end
 
+def display_invoice(product_hash)
+  puts ("Name\tPrice\tStax\tIDuty\tTotal ")
+  length = 1
+  while (length <= product_hash.length) do
+    product_hash[length].each do |varable|
+      print ("#{varable}\t") 
+    end
+    puts
+    length += 1
+  end
+end
+
 continue = 'y'
 object1 = Salestax.new
 product_hash = Hash.new(Array.new)
 serial_number = 1
 grand_total = 0
+
 while continue == 'y' do
   puts("Enter Product Name")
   product_name = gets.chomp
@@ -35,21 +48,10 @@ while continue == 'y' do
   (import.downcase == 'yes') ? import_duty = object1.compute_import_duty(product_price) : import_duty = 0
   total_Price = product_price + sales_tax + import_duty
   grand_total += total_Price 
-  #product_hash[serial_number]
   product_hash[serial_number] =  product_name, product_price, sales_tax, import_duty, total_Price  
   serial_number += 1
   puts(" Do you want to add more items to your list(y/n)")
   continue = gets.chomp
 end
-puts ("Name\tPrice\tStax\tIDuty\tTotal ")
-length = 1
-while (length <= product_hash.length) do
-  product_hash[length].each do |varable|
-  print ("#{varable}\t") 
-end
-  puts
-  length += 1
-end
+display_invoice(product_hash)
 puts("Grand Total = #{grand_total.round}")
-
-  
