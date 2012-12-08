@@ -6,8 +6,9 @@ def read_file
     element = (name << " " << "(" << "EmpId: #{emp_id}" << ")")
     (develope_hash[designation] ||= []) << element
   end
+end
   
-  File.open('new.txt','w') { |f|
+File.open('new.txt','w') { |f|
     develope_hash.each {|key , value|
       f << "#{key}" << "\n " 
       value.each{|item|
@@ -15,8 +16,6 @@ def read_file
       f << "\n"
     }
    puts "File Formated successfully"
-
-  }
-end
+}
 
 read_file
