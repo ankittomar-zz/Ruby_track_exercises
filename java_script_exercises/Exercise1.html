@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style type="text/css">
+      cb1 { font-size:20px; }
+    </style>
+  
+    <title>Exercise 1</title>
+  
+    <script>
+      function check_all()
+        {
+          a = document.getElementsByClassName('cb1');
+          for each(var i in a)
+            {
+              i.checked = true;
+            }
+        }
+
+      function check_none()
+        {
+          a = document.getElementsByClassName('cb1');
+          for each(var i in a)
+            {
+              i.checked = false;
+            }
+        }
+    </script>
+  </head>
+
+  <body>
+    <P> Question:   Create a list of checkbox (red, green, yellow, white, black). Now create to links "Check all" and 'none'. When you click on check all link all checkbox will be selected, and when you click on none link all checkbox will be deselected(working example is gmail).
+    </p>
+    <form>
+      <input type="checkbox" name="color" value="red" class="cb1" >red<br>
+      <input type="checkbox" name="color" value="green" class="cb1">green<br>
+      <input type="checkbox" name="color" value="yellow" class="cb1">Yellow<br>
+      <input type="checkbox" name="color" value="white" class="cb1">White<br>
+      <input type="checkbox" name="color" value="black" class="cb1">Black
+    </form>
+    <a href="javaScript:" onclick="check_all();"> Select ALL </a> <br>
+    <a href="javaScript:" onclick="check_none();"> Select None </a>
+  </body>
+
+</html>
