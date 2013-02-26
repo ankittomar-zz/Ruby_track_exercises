@@ -1,17 +1,9 @@
-function check_all()
+function check_all(state)
 {
   a = document.getElementsByClassName('cb1');
   for each(var i in a)
     {
-      i.checked = true;
+      i.checked = state;
     }
 };
 
-function check_none()
-{
-  a = document.getElementsByClassName('cb1');
-  for each(var i in a)
-    {
-      i.checked = false;
-    }
-};
