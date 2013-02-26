@@ -1,0 +1,32 @@
+<html>
+  <head>
+   
+    <link rel="stylesheet" type="text/css" href="exercise1.css">
+  
+    <title>Exercise 2</title>
+  
+    <script  type="text/javascript" src="exercise2.js"> </script>
+  </head>   
+
+  <body>
+    <P> 
+
+      Create a list of checkboxs(Sunday, Monday, Wednesday, Thursday, Tuesday, Friday, Saturday and none). Now when I start checking these checkboxs, it should not let me check more than 3 checkboxes. When I try to check on 4th checkbox it should alert me as "Only 3 days can be selected. You have already selected sunday, monday and tuesday".
+
+      Now when I click on none, all other checkboxs should be deselected. Also when 'none' is selected and I select any other option(lets assume sunday), that option(sunday) will be selected and none will be deselected.
+
+    </p>
+    <form>
+      <input type="checkbox" name="color" value="sunday" class="cb1" onClick ="check_day(this)" >Sunday<br>
+      <input type="checkbox" name="color" value="monday" class="cb1" onClick ="check_day(this)">Monday<br/>
+      <input type="checkbox" name="color" value="wednesday" class="cb1" onClick ="check_day(this)">Wednesday<br/>
+      <input type="checkbox" name="color" value="thursday" class="cb1" onClick ="check_day(this)">Thursday<br/>
+      <input type="checkbox" name="color" value="tuesday" class="cb1" onClick ="check_day(this)">Tuesday <br/>
+      <input type="checkbox" name="color" value="friday" class="cb1" onClick ="check_day(this)">Friday<br/>
+      <input type="checkbox" name="color" value="saturday" class="cb1" onClick ="check_day(this)">Saturday <br/>
+      <input type="checkbox" name="color" value="none" class="cb2" onClick ="check_none(this)">None
+    </form>
+    
+  </body>
+
+</html>
