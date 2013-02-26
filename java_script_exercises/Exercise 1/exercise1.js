@@ -1,9 +1,8 @@
-function check_all(state)
-{
-  a = document.getElementsByClassName('cb1');
-  for each(var i in a)
+function change_state(state) {
+    check_boxes = document.getElementsByClassName('cb1');
+    for each(var check_box in check_boxes)
     {
-      i.checked = state;
+        check_box.checked = state;
     }
 };
 
