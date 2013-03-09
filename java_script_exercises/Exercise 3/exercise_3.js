@@ -18,10 +18,11 @@ function add_col_to_row(new_row) {
     new_name_col = new_row.insertCell(0);
     new_email_col = new_row.insertCell(1);
     new_action_col = new_row.insertCell(2);
+    
     new_action_col.innerHTML = "newaction";
     new_name_col.innerHTML = "newname";
     name_text_field = insert_text_field();
-    name_text_field.name = "name_txt[]";
+    name_text_field.name = "name_txt";
     new_email_col.appendChild(name_text_field); 
     
     table_row_count = table_node.rows.length;
