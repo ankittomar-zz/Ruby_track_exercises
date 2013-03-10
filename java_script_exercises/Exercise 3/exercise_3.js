@@ -19,12 +19,10 @@ function add_col_to_row(new_row) {
     new_email_col = new_row.insertCell(1);
     new_action_col = new_row.insertCell(2);
     
-    name_text_field = create_text_field();
-    name_text_field.name = "name_txt";
+    name_text_field = create_text_field('name_txt');
     new_name_col.appendChild(name_text_field);
 
-    email_text_field = create_text_field();
-    email_text_field.name = "email_field";
+    email_text_field = create_text_field("email_txt");
     new_email_col.appendChild(email_text_field); 
     
     submit_button = create_button();
@@ -32,10 +30,11 @@ function add_col_to_row(new_row) {
     
 }
 
-function create_text_field() {
+function create_text_field(field_name) {
     
     new_text_field = document.createElement("input");
     new_text_field.type = "text";
+    new_text_field.name = field_name;
     
     return new_text_field;
 }
@@ -66,9 +65,17 @@ function create_link(link_text_value) {
 
 function submit_line_item(element) {
     
-    submit_button = document.getElementById("submit_button_1");
-    submit_data(element);
-    replace_button_with_link(element);
+    element_parent_node = element.parentNode.parentNode;
+    name_col_element = element_parent_node.childNodes[0];
+    email_col_element = element_parent_node.childNodes[1];
+    
+    if (name_col_element.childNodes[0].value != '' && email_col_element.childNodes[0].value != '')
+        {
+
+            submit_data(name_col_element,email_col_element);
+            replace_button_with_link(element);
+        }
+    else alert("Name and Email can't be blank");
 
 }
 
@@ -91,11 +98,9 @@ function replace_button_with_link(element) {
 
 }
 
-function submit_data(element) {
+function submit_data(name_col_element,email_col_element) {
     
-    element_parent_node = element.parentNode.parentNode;
-    name_col_element = element_parent_node.childNodes[0];
-    email_col_element = element_parent_node.childNodes[1];
+    
     name_data = name_col_element.childNodes[0].value;
     email_data = email_col_element.childNodes[0].value;
     name_col_element.innerHTML = name_data;
@@ -105,21 +110,17 @@ function submit_data(element) {
 
 function edit_data(element) {
     
-    parent_node = element.parentNode.parentNode;
-    
-    name_col = parent_node.childNodes[0];
-    email_col = parent_node.childNodes[1];
-    
+    name_col = element.parentNode.parentNode.childNodes[0];
     name_data = name_col.innerHTML;
-    email_data = email_col.innerHTML;
     
-    name_text_field = create_text_field();
-    name_text_field.name = "name_txt";
+    email_col = element.parentNode.parentNode.childNodes[1];
+    email_data = email_col.innerHTML;
+
+    name_text_field = create_text_field('name_txt');
     name_text_field.value = name_data;
     name_col.replaceChild(name_text_field,name_col.childNodes[0]);
 
-    email_text_field = create_text_field();
-    email_text_field.name = "email_field";
+    email_text_field = create_text_field('email_field');
     email_text_field.value = email_data;
     email_col.replaceChild(email_text_field,email_col.childNodes[0]);
 
