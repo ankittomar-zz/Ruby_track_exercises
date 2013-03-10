@@ -139,4 +139,4 @@ function delete_row(element) {
     table = current_row.parentNode;
     table.deleteRow(current_row.rowIndex);
 }
-
+    
