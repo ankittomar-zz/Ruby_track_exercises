@@ -5,17 +5,14 @@ function get_name() {
     
     if( first_name == null || first_name.trim() == '' || last_name == null || last_name.trim() == '' )
         {
-           alert("First Name and Last Name can't be Null or space characters. Please try Again ");
-           document.location.reload();  
+            alert("First Name and Last Name can't be Null or space characters. Please try Again ");
+            document.location.reload();  
         }
     else  
-        {
+        {    
             message = "hello " + first_name + " " + last_name;
             alert(message);
             document.getElementById("para_1").innerHTML=message;
-            
-
-
         }
 }
 
