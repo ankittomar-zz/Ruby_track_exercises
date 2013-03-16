@@ -1,0 +1,58 @@
+<html>
+  <head>
+     <script type = "text/javascript" src = "exercise7.js"></script>
+  </head>
+
+  <body>
+    <div align="center" style="background-color:#9AB368">
+        <b>Registration Form </b>
+    </div> 
+      
+    <form style="background-color:#E8F2D7">
+      
+      <div >
+        <table>
+          <tr>
+            <td>LoginID : </td>
+            <td> <input type= "text" name="loginid" class="not_empty"> </td>
+          </tr>
+
+          <tr>
+            <td> Email : </td>
+            <td> <input type="text" name="email" class="not_empty"> </td>
+          </tr>
+
+          <tr>
+            <td>Name : </td> 
+            <td> <input type="text" name="name" class="not_empty"> </td>
+          </tr>
+
+          <tr>
+            <td>Home Page : </td>
+            <td><input type="text" name="homepage" class="not_empty"></td> 
+          </tr>
+
+          </table>
+        </div>
+
+        <div>
+
+          <p>About me :</p>  
+          <textarea rows="15" cols="100" name="about me" class= "not_empty"></textarea></br>
+          <p>
+            <input type="checkbox" name="notification" class="notification"> <b> Receive notification of comments.</b></br>
+            you will be sent an email when someone posts comments on your blog and album.</br>
+          </p>
+
+          <p align= "center">
+            Your password will be mailed to you.
+          </p>
+
+          <p align="center"> 
+            <input type="submit" name="submit" value="Go" onClick=" return check_empty();">
+          </p>
+        
+        </div>
+    </form>
+  </body>
+</html>
