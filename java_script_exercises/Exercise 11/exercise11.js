@@ -1,4 +1,3 @@
-
 function add() {
 
     var source_select_box = document.getElementById("source");
