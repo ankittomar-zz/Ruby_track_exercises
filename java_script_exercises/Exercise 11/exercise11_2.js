@@ -1,17 +1,17 @@
 
-function add(element) {
+function transfer(element) {
 
     var source_select_box = document.getElementById("source");
     var destination_select_box = document.getElementById('destination');
 
-if(element.value == "add")
+if(element.value == "source_box")
 {
     number_of_options = source_select_box.options.length;
     source = source_select_box;
     destination = destination_select_box;
 }
 
-else if(element.value == "remove")
+else if(element.value == "destination_box")
 { 
     number_of_options = destination_select_box.options.length;
     source = destination_select_box;
@@ -33,7 +33,7 @@ else if(element.value == "remove")
         }
 
     }
-    else alert("No More Countries Left in Souce Box");
+    else alert("No More Countries Left in " + element.value + " Box");
 
 
 }
