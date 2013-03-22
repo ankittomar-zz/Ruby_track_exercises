@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <script type="text/javascript" src="exercise12.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <p>
+        Create a div with height 100 and scroll bars. Display a list of checkbox color, drinks, movies and bikes in this div. Now when you click on color checkbox it should display four checkboxes(red, yellow, green, blue) as a child list and color checkbox should be checked with its child list of checkboxes. Again when you click on color checkbox child list should be hidden and its child checkboxes should get deselected(clear state). Same with movies, drink and bikes.
+      </p>
+      
+      <p>
+        movies: [Dar, Sir] </br>
+        drinks: [coke, pepsi, dew]</br>
+        bikes: [V-rod, pulsar, cbz]</br>
+      </p>
+
+      <p>
+        Remember: When you click on a parent checkbox and if child list checkboxes are out of visible area the div's scrollbars should scroll and child list should be visible automatically. We should not scroll the div to see them(child list of checkboxes).
+      </p>
+    <div>
+
+    <div style="height:100px; width:400px; border : 2px solid black ; overflow-y:scroll;" >
+      <ul style="list-style: none;" > 
+        <li style="list-style: none;" id="parent">
+          <input type="checkbox" name="color" value="color" id="color_check_box" onClick="show(this)"> Color
+          <ul class="color" id = "dsf"style="list-style: none; display:none;">
+            <li><input type="checkbox" name="red" value="red" class="color"> Red </li>
+            <li><input type="checkbox" name="yellow" value="yellow" class="color"> Yellow</li>
+            <li><input type="checkbox" name="green" value="green" class="color">green</li>
+            <li><input type="checkbox" name="blue" value="blue" class="color">blue</li>
+          </ul>
+        </li> 
+        
+        <li style="list-style: none;"><input type="checkbox" name="movies" value="movies" onClick="show(this)">Movies
+          <ul style="list-style: none;  display:none;" class="movies" id="movies">
+            <li><input type="checkbox" name="Darr" value="Darr" class="movies"> Darr </li>
+            <li><input type="checkbox" name="sir" value="sir" class="movies"> Sir </li>
+          </ul>
+        </li>
+        
+        <li style="list-style: none; "><input type="checkbox" name="drinks" value="drinks" id="drinks" onClick="show(this)">Drinks
+          <ul style="list-style: none; display:none;" class="drinks">
+            <li><input type="checkbox" name="pepsi" value="pepsi" class="drinks">Pepsi</li>
+            <li><input type="checkbox" name="Coke" value="Coke" class="drinks">Coke</li>
+          </ul>
+        </li>
+        
+        <li style="list-style: none";><input type="checkbox" name="bikes" value="bikes" onClick="show(this)">Bikes        
+          <ul style="list-style: none; display:none;" class="bikes">
+            <li><input type="checkbox" name="V-rod" value="V-rod" class="bikes">V-rod</li>
+            <li><input type="checkbox" name="pulsar" value="pulsar" class="bikes">Pulsar</li>
+            <li><input type="checkbox" name="cbz" value="cbz" class="bikes">CBZ</li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+  </body>
+</html>
