@@ -5,7 +5,7 @@ function get_name() {
     
     if( first_name == null || first_name.trim() == '' || last_name == null || last_name.trim() == '' )
     {
-        alert("First OR and Last Name can't be Null or space characters. Please try Again ");
+        alert("First OR/and Last Name can't be Null or space characters. Please try Again ");
         document.location.reload();  
     }
     else  
