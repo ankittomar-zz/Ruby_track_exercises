@@ -12,7 +12,7 @@ function get_name() {
     {    
         message = "hello " + first_name + " " + last_name;
         alert(message);
-        document.getElementById("welcome_message_paragraph").innerHTML=message;
+        document.getElementById("welcome_message_paragraph").innerHTML = message;
     }
 }
 

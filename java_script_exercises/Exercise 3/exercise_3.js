@@ -1,5 +1,3 @@
-
-
 function add_new_row() {
     table_node = document.getElementById("employee_info_table");  
     insert_row(table_node);
