@@ -4,7 +4,7 @@ function validate_number(){
     var result_field = document.getElementById("result");
     alert(input_text);
     
-    var number_regex = /^((\.)?([0-9]+)(\.[0-9]+)*)/;
+   // var number_regex = /^((\.)?([0-9]+)(\.[0-9]+)*)/;
     alert(isNaN(input_text));
     if(isNaN(input_text))
     {
