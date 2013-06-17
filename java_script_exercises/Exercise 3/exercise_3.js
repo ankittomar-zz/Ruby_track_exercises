@@ -66,11 +66,11 @@ function submit_line_item(element) {
     var email_column_element = element_parent_node.childNodes[1];
     
     if (name_column_element.childNodes[0].value != '' && email_column_element.childNodes[0].value != '')
-        {
+    {
 
-            submit_data(name_column_element, email_column_element);
-            replace_button_with_link(element);
-        }
+        submit_data(name_column_element, email_column_element);
+        replace_button_with_link(element);
+    }
     else alert("Name and Email can't be blank");
 
 }
