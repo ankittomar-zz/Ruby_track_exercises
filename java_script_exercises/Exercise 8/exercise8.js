@@ -20,6 +20,5 @@ function check_format() {
         validation_url = false;
     }
     
-    if(validation_email == true && validation_url == true) return true
-    else return false
+    return (validation_email && validation_url);
 }
