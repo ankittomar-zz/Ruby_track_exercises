@@ -10,7 +10,7 @@ function validate_number(){
     }
     else
     {
-        result_field.value = "true";
+        return result_field.value = "true";
         return true;
     }
 

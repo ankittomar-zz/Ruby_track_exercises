@@ -3,7 +3,7 @@ function extract_domain_sub_domain() {
     var domain, url, subdomain, url_text, url_format, url_format_regex,input; 
     
     input = document.getElementById("url").value;
-    url_format_regex = /(^((http)s?:\/\/)?www\.[a-z]+\.(([a-z]+)|([a-z]+\.[a-z]+)|([a-z]+\.[a-z]+\.[a-z]+))$)/i
+    url_format_regex = /(^((http)s?:\/\/)?www\.[a-z]+\.(([a-z]+)|([a-z]+\.[a-z]+)|([a-z]+\.[a-z]+\.[a-z]+))(\/\w+)*$)/i
     url_format = /(www\.([a-z]+)(\.[a-z]+)(\.[a-z]+)?(\.[a-z]+)?)/
     url_text = input.match(url_format_regex);
     
