@@ -1,4 +1,4 @@
-function extract_domain_sub_domain() {
+var extract_domain_sub_domain =function () {
    
     var domain, url, subdomain, url_text, url_format, url_format_regex,input; 
     

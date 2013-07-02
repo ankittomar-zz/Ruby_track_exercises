@@ -1,12 +1,11 @@
-function validate_number(){
+var validate_number = function (event){
 
     var input_text = document.getElementById("input_field").value;
     var result_field = document.getElementById("result");
     if(isNaN(input_text))
     {
         result_field.value = "false";
-        return false;
-
+        event.preventDefault();
     }
     else
     {
@@ -15,3 +14,8 @@ function validate_number(){
     }
 
 }
+
+window.onload = function () {
+    var submit_button = document.getElementById("submit_form");
+    submit_button.addEventListener("click",validate_number,false);
+}   
