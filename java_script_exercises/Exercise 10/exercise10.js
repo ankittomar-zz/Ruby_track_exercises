@@ -8,7 +8,7 @@ Domain.prototype = {
         
         input = document.getElementById("url").value.trim();
         url_format_regex = /(^((http)s?:\/\/)?(www\.)?[a-z]+\.(([a-z]+)|([a-z]+\.[a-z]+)|([a-z]+\.[a-z]+\.[a-z]+))(\/.*)*$)/i
-        url_format = /((www\.)?([a-z]+)\.([a-z]+)(\.[a-z]+)?(\.[a-z]+)?)/
+        url_format = /((www\.)?([a-z]+)(\.[a-z]+)(\.[a-z]+)?(\.[a-z]+)?)/
         url_text = input.match(url_format_regex);
         
         if(url_text != null)
