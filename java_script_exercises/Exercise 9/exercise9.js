@@ -26,7 +26,7 @@ Validate.prototype = {
     bindSubmit: function () {
         var that = this;
         var submit_button = document.getElementById("submit_form");
-        submit_button.addEventListener("submit", that.validate_number)  ;
+        submit_button.addEventListener("submit", that.validate_number);
     }
 
      
