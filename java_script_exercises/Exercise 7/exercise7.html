@@ -1,58 +1,87 @@
 <html>
   <head>
      <script type = "text/javascript" src = "exercise7.js"></script>
+     <link rel="stylesheet" type="text/css" href="exercise7.css" />
   </head>
 
-  <body align = "center" style= "width:500px">
-    <div align="center" style="background-color:#9AB368">
+  <body>
+    <div id="parent_container">
+      <div align="center" class="div_background">
         <b>Registration Form </b>
-    </div> 
-      
-    <form style="background-color:#E8F2D7">
-      
-      <div align="center">
-        <table >
-          <tr>
-            <td>LoginID : </td>
-            <td> <input type= "text" name="loginid" class="not_empty"> </td>
-          </tr>
-
-          <tr>
-            <td> Email : </td>
-            <td> <input type="text" name="email" class="not_empty"> </td>
-          </tr>
-
-          <tr>
-            <td>Name : </td> 
-            <td> <input type="text" name="name" class="not_empty"> </td>
-          </tr>
-
-          <tr>
-            <td>Home Page : </td>
-            <td><input type="text" name="homepage" class="not_empty"></td> 
-          </tr>
-
-          </table>
-        </div>
-
-        <div>
-
-          <p>About me :</p>  
-          <textarea rows="15" cols="100" name="about me" class= "not_empty"></textarea></br>
-          <p>
-            <input type="checkbox" name="notification" class="notification"> <b> Receive notification of comments.</b></br>
-            you will be sent an email when someone posts comments on your blog and album.</br>
-          </p>
-
-          <p align= "center">
-            Your password will be mailed to you.
-          </p>
-
-          <p align="center"> 
-            <input type="submit" name="submit" value="Go" onClick=" return check_empty();">
-          </p>
+      </div> 
         
-        </div>
-    </form>
+      <form class="div_backgroung_color_form" align="center" id="registration" >
+        <div>
+          <table class="div_backgroung_color_form">
+            <tr>
+              <td>LoginID : </td>
+              <td> <input type= "text" name="loginid" class="not_empty"> </td>
+            </tr>
+
+            <tr>
+              <td> Email : </td>
+              <td> <input type="text" name="email" class="not_empty text_box_bg"> </td>
+            </tr>
+
+            <tr>
+              <td>Name : </td> 
+              <td> <input type="text" name="name" class="not_empty text_box_bg"> </td>
+            </tr>
+
+            <tr>
+              <td> TimeZone: </td>
+              <td> <select id="time_zone" class="not_empty" name="Time Zone">
+
+                      <option value>--Select--</option>
+                      <option value="GMT">GMT</option>
+                   </select>
+              </td>
+            </tr>
+
+            <tr>
+              <td>Home Page : </td>
+              <td><input type="text" name="homepage" class="not_empty"></td> 
+            </tr>
+
+            <tr>
+             <td>About me :</td>
+             <td></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <table>
+                  <tr>
+                    <td><textarea rows="10" cols="50" name="About Me" class="not_empty"></textarea>
+                    </td>
+                  </tr> 
+              
+                  <tr>
+                    <td><input type="checkbox" name="notification" id="notification"><b> Receive notification of comments.</b> 
+                    </td>
+                  </tr>
+                
+                  <tr>
+                   <td>
+                      you will be sent an email when someone posts comments on your blog and album.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td align="center" class="padding_10">
+                      Your password will be mailed to you.
+                    </td>
+                   </tr>
+                  
+                   <tr>
+                    <td align = "center"> 
+                      <input type="submit" name="submit" value="Go">
+                    </td>
+                  </tr>
+                </table>
+              <td>
+            <tr>
+          </table>
+        </div>        
+      </form>
+    </div>
   </body>
 </html>

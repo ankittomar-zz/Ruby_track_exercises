@@ -12,13 +12,10 @@ Validate.prototype = {
         {
             result_field.value = "false"
             event.preventDefault(); 
-
-            //return false;
         }
         else
         {
             result_field.value = "true";
-            
         }
 
     },
