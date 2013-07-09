@@ -1,0 +1,8 @@
+#parent_container { width: 500px; margin:0 auto; }
+.child_container {width: 100%; }
+.clear{ clear:both;}
+.padding_10 {padding:10px }
+textarea {resize:none; width: 490px;}
+.div_background { background-color:#9AB368; }
+.div_backgroung_color_form { background-color:#E8F2D7; }
+.text_box_bg { background-color:#FFFFA0; }
