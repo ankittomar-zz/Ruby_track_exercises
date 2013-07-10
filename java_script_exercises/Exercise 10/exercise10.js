@@ -51,8 +51,8 @@ Domain.prototype = {
 
     bindSubmit: function() {
         var that = this;
-        var submit_form = document.getElementById("url_submit");
-        submit_form.addEventListener("submit", that.extractDomainSubDomain);
+        var form = document.getElementById("url_submit");
+        form.addEventListener("submit", that.extractDomainSubDomain);
     }
 }
 

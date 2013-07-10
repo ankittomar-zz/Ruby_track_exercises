@@ -6,7 +6,7 @@ Validation.prototype = {
 
     checkEmpty: function(element, event) {
     
-        var validation_failed = 0;
+        var validation_failed = false;
         var form_input_elements = document.getElementsByClassName("not_empty");
         var number_of_form_input_elements = form_input_elements.length;
         var notification_checkbox = document.getElementById("notification");
@@ -18,19 +18,19 @@ Validation.prototype = {
             
             if(field_value == "" || field_value == null)
             {
-                validation_failed = 1;
+                validation_failed = true;
                 alert(field_name + " " + "can't be empty");
             }
             else if(field_name == "About Me" && field_value.length < 50)  
             {
                 alert("About me should have atleast 50 characters");
-                validation_failed = 1;
+                validation_failed = true;
             }
         }
 
         if(!notification_checkbox.checked) 
         {
-            validation_failed = 1;
+            validation_failed = true;
             alert("Please confirm notification comment receipt");
         } 
 
@@ -47,9 +47,9 @@ Validation.prototype = {
 
     bindSubmit: function() {
         var that = this;
-        var submit_form = document.getElementById("registration");
-        submit_form.addEventListener("submit", function(event) {
-            return that.checkEmpty(this, event)
+        var form = document.getElementById("registration");
+        form.addEventListener("submit", function(event) {
+            that.checkEmpty(this, event)
         }); 
     }
 
