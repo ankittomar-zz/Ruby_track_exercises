@@ -4,40 +4,40 @@ var Domain = function(){
 
 Domain.prototype = {
     extractDomainSubDomain: function () {
-        var domain, url, subdomain, url_text, url_format, url_format_regex,input; 
+        var domain, url, subdomain, url_text, url_format, url_format_regex, input; 
         
         input = document.getElementById("url").value.trim();
-        url_format_regex = /(^((http)s?:\/\/)?(www\.)?[a-z]+\.(([a-z]+)|([a-z]+\.[a-z]+)|([a-z]+\.[a-z]+\.[a-z]+))(\/.*)*$)/i
-        url_format = /((www\.)?([a-z]+)\.([a-z]+)(\.[a-z]+)?(\.[a-z]+)?)/
-        url_text = input.match(url_format_regex);
+        url_protocol_format_regex = /(^((http)s?:\/\/)?(www\.)?[a-z]+\.(([a-z]+)|([a-z]+\.[a-z]+)|([a-z]+\.[a-z]+\.[a-z]+))(\/.*)*$)/i
+        url_regex = /((www\.)?([a-z]+)(\.)([a-z]+)(\.[a-z]+)?(\.[a-z]+)?)/
+        url_text = input.match(url_protocol_format_regex);
         
         if(url_text != null)
         {       
-            url = url_text[0].match(url_format);
-            if(RegExp.$5 == "" && RegExp.$6 == "")
+            url = url_text[0].match(url_regex);
+            if(RegExp.$6 == "" && RegExp.$7 == "")
             {
 
-                domain = RegExp.$3+RegExp.$4;
+                domain = RegExp.$3 + RegExp.$4 + RegExp.$5;
                 
             }
-            else if ( RegExp.$5 != "" && RegExp.$6 == "")
+            else if ( RegExp.$6 != "" && RegExp.$7 == "")
             {
                 subdomain = RegExp.$3;
-                domain = RegExp.$4 +RegExp.$5;
+                domain = RegExp.$5 + RegExp.$6;
                 
             }
 
-            else if(RegExp.$6 != "")
+            else if(RegExp.$7 != "")
             {
                 subdomain = RegExp.$3;
-                domain = RegExp.$4+RegExp.$5+RegExp.$6;
+                domain = RegExp.$5 + RegExp.$6 + RegExp.$7;
             }
 
              
             if(subdomain!=null)
             {
               alert("Domain : " + domain);
-              alert("Sub domain : "+subdomain);
+              alert("Sub domain : "+ subdomain);
             }
             else alert( "Domain :  " + domain);
         }   
@@ -59,4 +59,3 @@ Domain.prototype = {
 window.onload = function(){
     domain = new Domain();
 }
-
