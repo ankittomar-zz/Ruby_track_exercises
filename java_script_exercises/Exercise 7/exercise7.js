@@ -1,45 +1,43 @@
-var Form = function() {
+var Validation = function() {
     this.bindSubmit();
-
 }
 
-Form.prototype = {
+Validation.prototype = {
 
     checkEmpty: function(element, event) {
     
-        var submission = 1;
-        var form_element = document.getElementsByClassName("not_empty");
-        var number_of_form_element = form_element.length;
+        var validation_failed = 0;
+        var form_input_elements = document.getElementsByClassName("not_empty");
+        var number_of_form_input_elements = form_input_elements.length;
         var notification_checkbox = document.getElementById("notification");
        
-        for (var i = 0; i < number_of_form_element; i++)
+        for (var i = 0; i < number_of_form_input_elements; i++)
         {
-            value = form_element[i].value;
-            name = form_element[i].name;
+            var field_value = form_input_elements[i].value.trim();
+            var field_name = form_input_elements[i].name;
             
-            if(value == "" || value == null)
+            if(field_value == "" || field_value == null)
             {
-                submission = 0;
-                alert(name + " " + "can't be empty");
+                validation_failed = 1;
+                alert(field_name + " " + "can't be empty");
             }
-            else if(name == "About Me" && value.length < 50)  
+            else if(field_name == "About Me" && field_value.length < 50)  
             {
                 alert("About me should have atleast 50 characters");
-                submission = 0;
+                validation_failed = 1;
             }
         }
 
         if(!notification_checkbox.checked) 
         {
-            submission = 0;
+            validation_failed = 1;
             alert("Please confirm notification comment receipt");
         } 
 
-        if (submission == 0)
+        if (validation_failed)
         {
             event.preventDefault();
         }
-
         else 
         {
            return true;
@@ -50,13 +48,13 @@ Form.prototype = {
     bindSubmit: function() {
         var that = this;
         var submit_form = document.getElementById("registration");
-        submit_form.addEventListener("submit", function(e) {
-            that.checkEmpty(this,e)
+        submit_form.addEventListener("submit", function(event) {
+            return that.checkEmpty(this, event)
         }); 
     }
 
 }
 
 window.onload = function() {
-    new Form();
+    new Validation();
 }
